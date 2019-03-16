@@ -111,6 +111,10 @@ fn view(model: &Model) -> El<Msg> {
                 r"\mathbf{1} = \sum_i \lvert i \rangle \langle i \rvert"
             ),
             definition(
+                "Delta functions in Dirac notation",
+                r"\delta_{i, j} = \langle i \vert j /rangle"
+            ),
+            definition(
                 "A property of Trace",
                 r"tr(\mathbf{AB}) = tr(\mathbf{BA})"
             ),
@@ -119,9 +123,13 @@ fn view(model: &Model) -> El<Msg> {
                 r"\langle b \lvert \mathbf{T} \rvert a \rangle - \langle b \lvert \mathbf{S} \rvert a \rangle =
 \mathbf{T} - \mathbf{S} \langle b \vert a \rangle "
             ),
-           definition(
+            definition(
                 "Functions as integrals",
                 r"\int a^*(x) \mathbf{T} b(x) = \langle a \lvert \mathbf{T} \rvert b \rangle"
+            ),
+            definition(
+                "Sum and delta manipulation",
+                r"O_{ji} \sum_j \delta_{kj} = O_{ki}"
             ),
         ],
 
