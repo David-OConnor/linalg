@@ -51,9 +51,9 @@ fn view(model: &Model) -> El<Msg> {
                     },
                     ul![
                         li![r"$\mathbf{A}$, or $\mathbf{B}$, or $\mathbf{C}$ : Matrices"],
-                        li![r"$\mathbf{T}$, or $\mathbf{T}$ : Arbitrary operators"],
+                        li![r"$\mathbf{T}$, or $\mathbf{S}$ : Arbitrary operators"],
                         li![r"$a$ or $b$ or $c$ or $d$: Arbitrary vectors"],
-                        li![r"$“α or $β$ : Arbitrary constants"], // todo maybe change these
+                        li![r"$α$ or $β$ : Arbitrary constants"], // todo maybe change these
                         li![r"$i$, $j$, or $k$ : Basis vectors"],
                     ]
             ]
@@ -137,7 +137,7 @@ fn view(model: &Model) -> El<Msg> {
             ),
             definition(
                 "A delta equivalence",
-                r"\langle \mathbf{A_\alpha} \vert \mathbf{A_\Beta} \rangle = \delta_{\alpha \Beta}"
+                r"\langle \mathbf{A_\alpha} \vert \mathbf{A_\beta} \rangle = \delta_{\alpha \beta}"
             ),
         ],
 
