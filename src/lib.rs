@@ -108,11 +108,11 @@ fn view(model: &Model) -> El<Msg> {
             ),
             definition(
                 "A statement of basis completeness",
-                r"\mathbf{1} = \sum_i \lvert i \rangle \langle i \rvert"
+                r"\mathbb{1} = \sum_i \lvert i \rangle \langle i \rvert"
             ),
             definition(
                 "Delta functions in Dirac notation",
-                r"\delta_{i, j} = \langle i \vert j /rangle"
+                r"\delta_{i, j} = \langle i \vert j \rangle"
             ),
             definition(
                 "A property of Trace",
@@ -131,6 +131,14 @@ fn view(model: &Model) -> El<Msg> {
                 "Sum and delta manipulation",
                 r"O_{ji} \sum_j \delta_{kj} = O_{ki}"
             ),
+            definition(
+                "Functions in dirac notation",
+                r"\langle x \vert a \rangle = a(x)"
+            ),
+            definition(
+                "A delta equivalence",
+                r"\langle \mathbf{A_\alpha} \vert \mathbf{A_\Beta} \rangle = \delta_{\alpha \Beta}"
+            ),
         ],
 
         section![
@@ -142,6 +150,10 @@ fn view(model: &Model) -> El<Msg> {
             definition(
                 "Unitary matrix: Inverse is its adjoint",
                 r"\mathbf{A}^\dagger = \mathbf{A}^{-1}"
+            ),
+            definition(
+                "An orthonormal function",
+                r"\langle \mathbf{A} \vert \mathbf{A} \rangle = \mathbb{1} "
             ),
 
         ],
