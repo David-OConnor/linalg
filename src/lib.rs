@@ -37,8 +37,8 @@ fn _dirac_3(left: &str, middle: &str, right: &str) -> String {
     format!(r"\langle {} \lvert {} \rvert {} \rangle", left, middle, right)
 }
 
-fn view(model: &Model) -> El<Msg> {
-    div![
+fn view(model: &Model) -> Vec<El<Msg>> {
+    vec![
         h1!["Linear algebra cheatsheet"],
         p!["Intent: Provide a quick reference of definitions and identities that 
         are useful in formal, symbolic linear algebra"],
@@ -66,15 +66,19 @@ fn view(model: &Model) -> El<Msg> {
             ),
             definition(
                 "When dividing by an operator on the left, move it to the left",
-                r"\mathbf{A} = \mathbf{B}\mathbf{C}\mathbf{D} \rightarrow \mathbf{B}^{-1}\mathbf{A}^{-1} = \mathbf{C}\mathbf{D}"
+                r"\mathbf{A} = \mathbf{B}\mathbf{C}\mathbf{D} \rightarrow \mathbf{B}^{-1}\mathbf{A} = \mathbf{C}\mathbf{D}"
             ),
             definition(
                 "Dagger associativity",
                 r"(\mathbf{S T})^\dagger = \mathbf{T}^\dagger \mathbf{S}^\dagger"
             ),
             definition(
+                "Dagger commuting",
+                r"(\mathbf{T})^\dagger (a b) = a \mathbf{T})^\dagger b"
+            ),
+            definition(
                 "Determinant associativity",
-                r"(det(\mathbf{S T}) = det(\mathbf{T}) det(\mathbf{S})"
+                r"det(\mathbf{S T}) = det(\mathbf{T}) det(\mathbf{S})"
             ),
             definition(
                 "Definition of matrix multiplication", 
@@ -103,7 +107,7 @@ fn view(model: &Model) -> El<Msg> {
                 r"\langle a \lvert T^\dagger \rvert c \rangle = \langle c \lvert T \rvert a \rangle^*"
             ),
             definition(
-                "swapping bras and kets conjugates",
+                "Swapping bras and kets conjugates",
                 r"\langle a \vert b \rangle = \langle b \vert a \rangle^*"
             ),
             definition(
@@ -124,8 +128,12 @@ fn view(model: &Model) -> El<Msg> {
 \mathbf{T} - \mathbf{S} \langle b \vert a \rangle "
             ),
             definition(
-                "Functions as integrals",
-                r"\int a^*(x) \mathbf{T} b(x) = \langle a \lvert \mathbf{T} \rvert b \rangle"
+                "Dirac notation as integrals",
+                r"\int dx a^*(x) \mathbf{T} b(x) = \langle a \lvert \mathbf{T} \rvert b \rangle"
+            ),
+            definition(
+                "Dirac notation as integrals continued",
+                r"\int dx a^*(x) b(x) = \langle a \vert b \rangle"
             ),
             definition(
                 "Sum and delta manipulation",
@@ -153,7 +161,16 @@ fn view(model: &Model) -> El<Msg> {
             ),
             definition(
                 "An orthonormal function",
-                r"\langle \mathbf{A} \vert \mathbf{A} \rangle = \mathbb{1} "
+                r"\langle \mathbf{A} \vert \mathbf{A} \rangle = \mathbb{1}"
+            ),
+            definition(
+                "A property if a certain commutation rule applies",
+                r"[[\mathbf{A}, \mathbf{B}], \mathbf{A}] = 0 → e^{\mathbf{A}} \mathbf{B}
+e^{-\mathbf{A}} = \mathbf{B} + [\mathbf{A}, \mathbf{B}]"
+            ),
+            definition(
+                "Functions in dirac notation",
+                r"f_p(x) = \langle x \vert p \rangle"
             ),
 
         ],
