@@ -19,7 +19,7 @@ impl Default for Model {
 #[derive(Clone)]
 enum Msg {}
 
-fn update(msg: Msg, model: &mut Model) -> Update<Msg> {
+fn update(msg: Msg, model: &mut Model, _orders: Orders<Msg>) {
     match msg {}
     Render.into()
 }
